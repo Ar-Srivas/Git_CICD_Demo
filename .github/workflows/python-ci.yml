@@ -25,3 +25,16 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+      - name: Upload project artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-mlops-project
+          path: |
+            app.py
+            test_app.py
+            requirements-dev.txt
+            README.md
+            data/
+          if-no-files-found: warn
