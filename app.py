@@ -1,6 +1,11 @@
 def predict_label(value):
-    """A tiny example function for CI testing."""
+    """Predict a label based on the input value."""
     return "positive" if value >= 0.5 else "negative"
 
+
 if __name__ == "__main__":
-    print("Prediction:", predict_label(0.8))
+    value = 0.8
+    prediction = predict_label(value)
+    print(f"Input value: {value}")
+    print(f"Predicted label: {prediction}")
+    print("Prediction completed successfully!")
